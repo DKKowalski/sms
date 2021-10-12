@@ -1,0 +1,14 @@
+.home__wrapper {
+  display: flex;
+  margin: auto;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  margin-left: 600px;
+}
