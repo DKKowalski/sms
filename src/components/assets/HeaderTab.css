@@ -6,9 +6,12 @@
   justify-content: space-evenly;
   align-items: center;
   margin: auto;
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid #AC92A6;
   padding: 10px 10px 10px 10px;
-  box-shadow: 5px 5px 10px purple;
+  box-shadow: 5px 5px 10px #FFFFFC;
+  z-index: 1;
+  margin-bottom: 15px;
+  
 }
 
 .left__items {
@@ -20,6 +23,8 @@
 
 span {
   margin-left: 20px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .middle__items,
@@ -27,5 +32,17 @@ span {
   font-weight: 100px;
   font-size: 20px;
   color: #211042;
-  font-family: 'Oswald',sans-serif;
+  font-family: "Oswald", sans-serif;
+}
+
+.link {
+  text-decoration: none;
+  align-items: center;
+  padding: 10 10 10 10;
+}
+
+.link:hover {
+  background-color: #BEB7A4;
+  border: 1px solid white;
+  border-radius: 8px;
 }
