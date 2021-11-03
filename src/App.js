@@ -5,6 +5,7 @@ import HeaderTab from "../src/components/Header/HeaderTab";
 import Footer from "../src/components/Footer/Footer";
 import Home from "./pages/Home";
 import AboutUS from "./pages/AboutUS";
+import ContactUs from "./pages/ContactUs";
 
 class App extends Component {
   render() {
@@ -15,11 +16,10 @@ class App extends Component {
           <div>
             <Switch>
               <Route path="/home" exact component={Home}></Route>
-              <Route path="/about" exact component={AboutUS} />
-
+              <Route path="/about" exact component={AboutUS}></Route>
               <Route path="/faculty"></Route>
               <Route path="/news"></Route>
-              <Route path="/contactUs"></Route>
+              <Route path="/contact" exact component={ContactUs}></Route>
               <Route path="/login"></Route>
             </Switch>
           </div>
