@@ -1,7 +1,7 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import { Form, Input, TextArea, Button } from 'semantic-ui-react';
-//import './App.css';
+
 import './contactUs.css';
 import Swal from 'sweetalert2';
 import {Navbar} from 'react-bootstrap';
@@ -24,14 +24,14 @@ const ContactForm = () => {
       .then((result) => {
         console.log(result.text);
         Swal.fire({
-          icon: 'success',
-          title: 'Message Sent Successfully'
+          type: "success",
+          title: "Message Sent Successfully"
         })
       }, (error) => {
         console.log(error.text);
         Swal.fire({
-          icon: 'error',
-          title: 'Ooops, something went wrong',
+          type: "error",
+          title: "Ooops, something went wrong",
           text: error.text,
         })
       });
