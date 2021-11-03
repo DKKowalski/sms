@@ -1,0 +1,13 @@
+.home {
+  margin-bottom: 100px;
+
+}
+
+.Card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-top: 3px solid #6b717e;
+  flex-wrap: wrap;
+}
