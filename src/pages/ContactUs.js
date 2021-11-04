@@ -42,12 +42,7 @@ const ContactForm = () => {
   {/* --- handleOnSubmit method --- */}
   return (
     <div >
-    <Navbar className="navbar" expand="lg" variant="dark" >
-  <Container>
-    <Navbar.Brand >CONTACT US</Navbar.Brand>
-    <h2> Cradle Creed Basic School</h2>
-  </Container>
-</Navbar>
+   
     <div className='formContainer'>
       <Form onSubmit={handleOnSubmit}>
         <Form.Field
@@ -81,14 +76,7 @@ const ContactForm = () => {
         <Button type='submit' color='green'>Submit</Button>
       </Form>
     </div> 
-        <div className="flex-container">
-    <h2 >     
-      Contact us via telephone : <br/> +233 (0)24279xxxx      
-    </h2> 
-      <h2 > Locate us @ : <br/> ................</h2> 
-      <h2> GPS Address : <br/> ...................</h2>
-    </div>
-    
+        
     </div>
     
   );
