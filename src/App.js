@@ -6,6 +6,9 @@ import Footer from "../src/components/Footer/Footer";
 import Home from "./pages/Home";
 import AboutUS from "./pages/AboutUS";
 import ContactUs from "./pages/ContactUs";
+import 'semantic-ui-css/semantic.min.css'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
