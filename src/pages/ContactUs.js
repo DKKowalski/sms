@@ -2,7 +2,7 @@ import React from 'react';
 import emailjs from 'emailjs-com';
 import { Form, Input, TextArea, Button } from 'semantic-ui-react';
 
-import './contactUs.css';
+import './ContactUs.css';
 import Swal from 'sweetalert2';
 import {Navbar} from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
@@ -42,9 +42,10 @@ const ContactForm = () => {
   {/* --- handleOnSubmit method --- */}
   return (
     <div >
-    <Navbar id="bar" expand="lg" variant="dark" >
+    <Navbar className="navbar" expand="lg" variant="dark" >
   <Container>
     <Navbar.Brand >CONTACT US</Navbar.Brand>
+    <h2> Cradle Creed Basic School</h2>
   </Container>
 </Navbar>
     <div className='formContainer'>
@@ -80,13 +81,13 @@ const ContactForm = () => {
         <Button type='submit' color='green'>Submit</Button>
       </Form>
     </div> 
-    
-    <h2 > 
-    
-      Contact us via telephone : <br></br>
-      +233 (0)24279xxxx
-      
-    </h2>
+        <div className="flex-container">
+    <h2 >     
+      Contact us via telephone : <br/> +233 (0)24279xxxx      
+    </h2> 
+      <h2 > Locate us @ : <br/> ................</h2> 
+      <h2> GPS Address : <br/> ...................</h2>
+    </div>
     
     </div>
     
