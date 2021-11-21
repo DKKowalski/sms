@@ -6,9 +6,13 @@ import Footer from "../src/components/Footer/Footer";
 import Home from "./pages/Home";
 import AboutUS from "./pages/AboutUS";
 import ContactUs from "./pages/ContactUs";
-import 'semantic-ui-css/semantic.min.css'
+import Login from "./pages/Login";
+import AdminLogin from "./pages/LoginPages/AdminLogin";
+import StudentLogin from "./pages/LoginPages/StudentLogin";
+import instructorLogin from "./pages/LoginPages/instructorLogin";
+import "semantic-ui-css/semantic.min.css";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   render() {
@@ -23,7 +27,10 @@ class App extends Component {
               <Route path="/faculty"></Route>
               <Route path="/news"></Route>
               <Route path="/contact" exact component={ContactUs}></Route>
-              <Route path="/login"></Route>
+              <Route path="/login">{Login}</Route>
+              <Route path="/admin/login" component={AdminLogin} />
+              <Route path="/student/login" component={StudentLogin} />
+              <Route path="/instructor/login" component={instructorLogin} />
             </Switch>
           </div>
         </div>

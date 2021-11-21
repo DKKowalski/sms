@@ -14,21 +14,5 @@
     box-shadow: 4px 4px 4px gray;
     padding: 20px;
   }
-  .navbar{
-    font-weight: bold;
-    height: 90px;
-    background-color: rgb(67, 99, 158);
-    color: rgb(44, 95, 54);
-  }
-  .flex-container{   
-    position: relative;
-    bottom: 0px;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 110px;
-    height: 140px;
-    width: 100%;   
-    color: rgb(3, 5, 121);
-     background-color: rgba(24, 93, 109, 0.432);
-  }
+ 
+ 

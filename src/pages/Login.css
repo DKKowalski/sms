@@ -1,0 +1,32 @@
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 450px;
+}
+
+.instructor,
+.student,
+.admin {
+  border: 3px solid black;
+  margin: auto;
+  padding: 12px 12px 12px 12px;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.instructor:hover {
+  background-color: coral;
+  cursor: pointer;
+}
+
+.student:hover {
+  background-color: coral;
+  cursor: pointer;
+}
+
+.admin:hover {
+  background-color: coral;
+  cursor: pointer;
+}
