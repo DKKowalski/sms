@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ListGroup, Card } from "react-bootstrap";
 import { SettingsSharp } from "@material-ui/icons";
+import Students from "../Mutation-Student/Student";
 
 class AdminDash extends Component {
   constructor(props) {
@@ -38,12 +39,12 @@ class AdminDash extends Component {
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/admin/dashboard/student_mgt">
                   Student Management
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/admin/dashboard/instructor_mgt">
                   Instructors/Staff
                 </Link>
               </ListGroup.Item>
@@ -59,6 +60,8 @@ class AdminDash extends Component {
               </ListGroup.Item>
             </ListGroup>
           </Card>
+
+          <Route path="/admin/dashboard/student_mgt" component={Students} />
         </Router>
       </div>
     );
