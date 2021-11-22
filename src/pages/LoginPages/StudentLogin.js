@@ -54,7 +54,7 @@ class StudentLogin extends Component {
         .then((res) => {
           if (res.status === 200) {
             alert("Login Success! Welcome, " + this.state.studentID);
-            this.props.history.push("/studentdashbord");
+            this.props.history.push("/student/dashboard");
           } else {
             alert("Login Failed! Please try again!");
           }

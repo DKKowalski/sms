@@ -14,7 +14,7 @@ class InstructorDash extends Component {
         style={{ flexDirection: "column", marginBottom: 450 }}
       >
         <Router>
-          <div className="head">
+          <div className="headtext">
             <h1 style={{ color: "black" }}>Welcome !</h1>
           </div>
           <Card style={{ backgroundColor: "#000C66", width: "18rem" }}>

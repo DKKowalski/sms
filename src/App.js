@@ -11,6 +11,7 @@ import AdminLogin from "./pages/LoginPages/AdminLogin";
 import StudentLogin from "./pages/LoginPages/StudentLogin";
 import instructorLogin from "./pages/LoginPages/instructorLogin";
 import StudentDashboard from "./components/Dashboards/StudentDash";
+import AdminDashboard from "./components/Dashboards/AdminDash";
 import InstructorDashboard from "./components/Dashboards/InstructorDash";
 import "semantic-ui-css/semantic.min.css";
 
@@ -35,6 +36,7 @@ class App extends Component {
               <Route path="/instructor/login" component={instructorLogin} />
               <Route path="/student/dashboard" component={StudentDashboard} />
               <Route path="/instructor/dashboard" component={InstructorDashboard} />
+              <Route path="/admin/dashboard" component={AdminDashboard} />
             </Switch>
           </div>
         </div>

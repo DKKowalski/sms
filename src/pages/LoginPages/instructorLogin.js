@@ -53,7 +53,7 @@ class instructorLogin extends Component {
         .then((res) => {
           if (res.status === 200) {
             alert("Login Success! Welcome, " + this.state.instructorID);
-            this.props.history.push("/instructordashboard");
+            this.props.history.push("/instructor/dashboard");
           } else {
             alert("Login Failed! Please try again!");
           }
