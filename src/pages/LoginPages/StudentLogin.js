@@ -1,17 +1,72 @@
 import React, { Component } from "react";
 import student from "../../assets/students-cap.png";
 import { Form, Input, Button } from "semantic-ui-react";
+import axios from "axios";
 
 class StudentLogin extends Component {
   constructor(props) {
     super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeID = this.onChangeID.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+
+    this.state = {
+      studentID: "",
+      password: "",
+      userType: "",
+    };
   }
+  onChangeID = (e) => {
+    this.setState({
+      studentID: e.target.value,
+    });
+  };
+
+  onChangeUserType = (e) => {
+    this.setState({
+      userType: e.target.value,
+    });
+  };
+
+  onChangePassword = (e) => {
+    this.setState({
+      password: e.target.value,
+    });
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    const new_Student = {
+      studentID: this.state.studentID,
+      password: this.state.password,
+    };
+
+    if (!new_Student.studentID) {
+      alert("Enter Student ID");
+    } else if (!new_Student.password) {
+      alert("Enter Password");
+    } else if (!new_Student.studentID && !new_Student.password) {
+      alert("Enter Admin Credentials");
+    } else {
+      axios
+        .post("http://localhost:4000/api/instructor/login", new_Student)
+        .then((res) => {
+          if (res.status === 200) {
+            alert("Login Success! Welcome, " + this.state.studentID);
+            this.props.history.push("/studentdashbord");
+          } else {
+            alert("Login Failed! Please try again!");
+          }
+        });
+    }
+  };
 
   render() {
     return (
       <div>
         <div className="loginForm">
-          <Form className="formContainer">
+          <Form onSubmit={this.onSubmit} className="formContainer">
             <img
               style={{
                 margin: "auto",
@@ -26,13 +81,15 @@ class StudentLogin extends Component {
             <Form.Field
               id="form-input-control-email"
               control={Input}
-              type="number"
+              type="text"
               label="Student ID"
-              name="number"
+              name="student"
               placeholder="id..."
               required
               icon="user circle"
               iconPosition="left"
+              value={this.state.studentID}
+              onChange={this.onChangeID}
             />
 
             <Form.Field
@@ -45,8 +102,10 @@ class StudentLogin extends Component {
               required
               icon="lock"
               iconPosition="left"
+              value={this.state.password}
+              onChange={this.onChangePassword}
             />
-            <Button type="submit" color="blue">
+            <Button type="submit" className="btn btn-primary" color="blue">
               Login
             </Button>
           </Form>

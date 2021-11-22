@@ -10,6 +10,8 @@ import Login from "./pages/Login";
 import AdminLogin from "./pages/LoginPages/AdminLogin";
 import StudentLogin from "./pages/LoginPages/StudentLogin";
 import instructorLogin from "./pages/LoginPages/instructorLogin";
+import StudentDashboard from "./components/Dashboards/StudentDash";
+import InstructorDashboard from "./components/Dashboards/InstructorDash";
 import "semantic-ui-css/semantic.min.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,6 +33,8 @@ class App extends Component {
               <Route path="/admin/login" component={AdminLogin} />
               <Route path="/student/login" component={StudentLogin} />
               <Route path="/instructor/login" component={instructorLogin} />
+              <Route path="/student/dashboard" component={StudentDashboard} />
+              <Route path="/instructor/dashboard" component={InstructorDashboard} />
             </Switch>
           </div>
         </div>
