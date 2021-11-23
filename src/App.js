@@ -13,7 +13,6 @@ import instructorLogin from "./pages/LoginPages/instructorLogin";
 import StudentDashboard from "./components/Dashboards/StudentDash";
 import AdminDashboard from "./components/Dashboards/AdminDash";
 import InstructorDashboard from "./components/Dashboards/InstructorDash";
-
 import "semantic-ui-css/semantic.min.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";

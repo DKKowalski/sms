@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ListGroup, Card } from "react-bootstrap";
 import { SettingsSharp } from "@material-ui/icons";
 import Students from "../Mutation-Student/Student";
+import Instructor from "../Mutation-Instructor/Instructor";
+import Admin from "../Mutation-Admin/Admin";
 
 class AdminDash extends Component {
   constructor(props) {
@@ -24,17 +26,12 @@ class AdminDash extends Component {
           <Card style={{ backgroundColor: "#000C66", width: "18rem" }}>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/admin/dashboard/settings">
                   Admin Settings
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
-                  New Admin
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/admin/dashboard/admin_mgt">
                   Admin Management
                 </Link>
               </ListGroup.Item>
@@ -45,12 +42,7 @@ class AdminDash extends Component {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Link className="link" to="/admin/dashboard/instructor_mgt">
-                  Instructors/Staff
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Link className="link" to="">
-                  New Instructors
+                  Instructors/Staff Management
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
@@ -62,6 +54,11 @@ class AdminDash extends Component {
           </Card>
 
           <Route path="/admin/dashboard/student_mgt" component={Students} />
+          <Route
+            path="/admin/dashboard/instructor_mgt"
+            component={Instructor}
+          />
+          <Route path="/admin/dashboard/admin_mgt" component={Admin} />
         </Router>
       </div>
     );

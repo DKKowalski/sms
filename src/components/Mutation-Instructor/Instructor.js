@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ListGroup, Card } from "react-bootstrap";
-import AddStudent from "./AddStudent";
-import DeleteStudent from "./DeleteStudent";
-import ListStudent from "./ListStudent";
-import UpdateStudent from "./UpdateStudent";
-export default class Student extends Component {
-  constructor(props) {
-    super(props);
-  }
+import DeleteInstructor from "./DeleteInstructor";
+import AddInstructor from "./AddInstructor";
+import UpdateInstructor from "./UpdateInstructor";
+import ListInstructors from "./ListInstructors";
+
+export default class Instructor extends Component {
   render() {
     return (
       <Router>
@@ -19,37 +17,37 @@ export default class Student extends Component {
               <ListGroup.Item>
                 <Link
                   className="link"
-                  to="/admin/dashboard/student_mgt/view_students"
+                  to="/admin/dashboard/instructor_mgt/view_instructors"
                 >
-                  View Students
+                  View Instructors
                 </Link>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Link
                   className="link"
-                  to="/admin/dashboard/student_mgt/add_student"
+                  to="/admin/dashboard/instructor_mgt/add_instructor"
                 >
-                  Add Student
+                  Add Instructors
                 </Link>
               </ListGroup.Item>
             </ListGroup>
           </Card>
         </div>
         <Route
-          path="/admin/dashboard/student_mgt/add_student"
-          component={AddStudent}
+          path="/admin/dashboard/instructor_mgt/add_instructor"
+          component={AddInstructor}
         />
         <Route
-          path="/admin/dashboard/delete_student"
-          component={DeleteStudent}
+          path="/admin/dashboard/delete_student/:id"
+          component={DeleteInstructor}
         />
         <Route
-          path="/admin/dashboard/student_mgt/view_students"
-          component={ListStudent}
+          path="/admin/dashboard/instructor_mgt/view_instructors"
+          component={ListInstructors}
         />
 
-        <Route path="/update/:id" component={UpdateStudent} />
+        <Route path="/update/:id" component={UpdateInstructor} />
       </Router>
     );
   }

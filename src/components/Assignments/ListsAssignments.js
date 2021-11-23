@@ -4,32 +4,29 @@ import { Button } from "semantic-ui-react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
 
-const Student = (props) => {
+const Assignment = (props) => {
   return (
     <div>
       <Table stripe bordered hover>
         <thead>
           <tr>
             <th>NAME</th>
-            <th>ID NUMBER</th>
-            <th>EMAIL</th>
-            <th>Password</th>
+            <th>STATUS</th>
+            <th>DUE</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{props.student.studentName}</td>
-            <td>{props.student.studentID}</td>
-            <td> {props.student.email}</td>
-            <td> {props.student.password} </td>
+            <td>{props.assignments.name}</td>
+            <td>{props.assignments.status}</td>
+            <td> {props.assignments.dueDate}</td>
 
             <td>
-              <Button color="yellow">
-                <Link to={"/update/" + props.student._id}>Edit</Link>
-              </Button>
               <Button color="orange">
-                <Link to={"/update/" + props.student._id}>Delete</Link>
+                <Link to={"/assignmentupload/" + props.assignments._id}>
+                  Upload
+                </Link>
               </Button>
             </td>
           </tr>
@@ -38,16 +35,17 @@ const Student = (props) => {
     </div>
   );
 };
-class ListStudent extends Component {
+
+export default class ListsAssignments extends Component {
   constructor(props) {
     super(props);
-    this.state = { students: [] };
+    this.state = { assignments: [] };
   }
   componentDidMount() {
     axios
-      .get("http://localhost:4000/api/student/")
+      .get("http://localhost:4000/api/assignments/all")
       .then((response) => {
-        this.setState({ students: response.data });
+        this.setState({ assignments: response.data });
       })
       .catch(function (error) {
         console.log(error);
@@ -55,32 +53,31 @@ class ListStudent extends Component {
   }
   componentDidUpdate() {
     axios
-      .get("http://localhost:4000/api/student/")
+      .get("http://localhost:4000/api/assignments/all")
       .then((response) => {
-        this.setState({ students: response.data });
+        this.setState({ assignments: response.data });
       })
       .catch(function (error) {
         console.log(error);
       });
   }
-  studentList() {
-    return this.state.students.map(function (currentStudent, i) {
-      return <Student student={currentStudent} key={i} />;
+
+  assignmentList() {
+    return this.state.assignments.map(function (currentAssignment, i) {
+      return <Assignment assignments={currentAssignment} key={i} />;
     });
   }
   render() {
     return (
       <div style={{ marginTop: 32 }}>
         <div className="headtext">
-          <h1 style={{ color: "black" }}> students </h1>
+          <h1 style={{ color: "black" }}> Assignments </h1>
         </div>
 
         <Table stripe bordered hover>
-          <tbody> {this.studentList()} </tbody>
+          <tbody> {this.assignmentList()} </tbody>
         </Table>
       </div>
     );
   }
 }
-
-export default ListStudent;
