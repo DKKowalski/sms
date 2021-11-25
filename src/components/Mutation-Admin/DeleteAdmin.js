@@ -10,7 +10,7 @@ export default class DeleteAdmin extends Component {
   componentDidMount() {
     axios
       .delete(
-        "http://backendcommando.herokuapp.com/api/admin/delete/" + this.props.match.params.id
+        "https://backendcommando.herokuapp.com/api/admin/delete/" + this.props.match.params.id
       )
       .then((response) => {})
       .catch(function (error) {
@@ -21,7 +21,7 @@ export default class DeleteAdmin extends Component {
   onSubmit(e) {
     e.preventDefault();
     axios.delete(
-      "http://backendcommando.herokuapp.com/api/admin/delete/" + this.props.match.params.id
+      "https://backendcommando.herokuapp.com/api/admin/delete/" + this.props.match.params.id
     );
 
     this.props.history.push("/adminview");

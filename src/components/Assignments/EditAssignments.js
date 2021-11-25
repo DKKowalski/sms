@@ -22,7 +22,7 @@ export default class EditAssignments extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://backendcommando.herokuapp.com/api/assignments/edit/" +
+        "https://backendcommando.herokuapp.com/api/assignments/edit/" +
           this.props.match.params.id
       )
       .then((response) => {
@@ -64,7 +64,7 @@ export default class EditAssignments extends Component {
 
     axios
       .post(
-        "http://backendcommando.herokuapp.com/api/assignments/update/" +
+        "https://backendcommando.herokuapp.com/api/assignments/update/" +
           this.props.match.params.id,
         updateAssignment
       )

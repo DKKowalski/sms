@@ -45,7 +45,7 @@ export default class AddAssignment extends Component {
     };
 
     axios
-      .post("http://backendcommando.herokuapp.com/api/assignments/add", assign)
+      .post("https://backendcommando.herokuapp.com/api/assignments/add", assign)
       .then((res) => console.log(res.data));
 
     this.props.history.push("/viewAssignments");

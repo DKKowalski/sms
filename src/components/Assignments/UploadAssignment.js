@@ -42,7 +42,7 @@ export default class UploadAssignment extends Component {
     const data = new FormData();
     data.append("file", this.state.selectedFile);
     axios
-      .post("http://backendcommando.herokuapp.com/api/assignment", data, {
+      .post("https://backendcommando.herokuapp.com/api/assignment", data, {
         // receive two    parameter endpoint url ,form data
       })
       .then((res) => {
@@ -58,7 +58,7 @@ export default class UploadAssignment extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://backendcommando.herokuapp.com/api/assignments/all" + this.props.match.params.id
+        "https://backendcommando.herokuapp.com/api/assignments/all" + this.props.match.params.id
       )
       .then((response) => {
         this.setState({

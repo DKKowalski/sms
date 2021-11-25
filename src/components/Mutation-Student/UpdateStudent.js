@@ -28,7 +28,7 @@ export default class UpdateStudent extends Component {
 
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/student/" + this.props.match.params.id)
+      .get("https://backendcommando.herokuapp.com/api/student/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
           studentName: response.data.studentName,
@@ -94,7 +94,7 @@ export default class UpdateStudent extends Component {
 
     axios
       .post(
-        "http://backendcommando.herokuapp.comapi/student/update/" +
+        "https://backendcommando.herokuapp.comapi/student/update/" +
           this.props.match.params.id,
         updatedStudent
       )

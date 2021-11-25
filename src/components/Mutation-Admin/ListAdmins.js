@@ -35,7 +35,7 @@ export default class ListAdmins extends Component {
 
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/admin/edit")
+      .get("https://backendcommando.herokuapp.com/api/admin/edit")
       .then((response) => {
         this.setState({ admins: response.data });
         console.log(response.data);
@@ -47,7 +47,7 @@ export default class ListAdmins extends Component {
 
   componentDidUpdate() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/admin/edit")
+      .get("https://backendcommando.herokuapp.com/api/admin/edit")
       .then((response) => {
         this.setState({ admins: response.data });
         console.log(response.data);

@@ -96,7 +96,7 @@ export default class AddInstructor extends Component {
     };
 
     axios
-      .post("http://backendcommando.herokuapp.com/api/instructor/add", newUser)
+      .post("https://backendcommando.herokuapp.com/api/instructor/add", newUser)
       .then((res) => console.log(res.data));
 
     this.props.history.push("/instructorList");

@@ -39,7 +39,7 @@ export default class ListCourses extends Component {
 
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/course/")
+      .get("https://backendcommando.herokuapp.com/api/course/")
       .then((response) => {
         this.setState({ courses: response.data });
       })
@@ -50,7 +50,7 @@ export default class ListCourses extends Component {
 
   componentDidUpdate() {
     axios
-      .get("http://localhost:4000/api/course/")
+      .get("https://backendcommando.herokuapp.com/api/course/")
       .then((response) => {
         this.setState({ courses: response.data });
       })

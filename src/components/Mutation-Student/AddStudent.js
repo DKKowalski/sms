@@ -56,7 +56,7 @@ export default class AddStudent extends Component {
 
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/course/")
+      .get("https://backendcommando.herokuapp.com/api/course/")
       .then((response) => {
         this.setState({ courseList: response.data });
       })
@@ -133,7 +133,7 @@ export default class AddStudent extends Component {
     };
 
     axios
-      .post("http://localhost:4000/api/student/add", newUser)
+      .post("https://localhost:4000/api/student/add", newUser)
       .then(
         (res) => console.log(res.data),
         alert("You are successfully registered")

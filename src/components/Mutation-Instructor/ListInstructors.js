@@ -12,7 +12,7 @@ export default class ListInstructors extends Component {
 
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/instructor/all")
+      .get("https://backendcommando.herokuapp.com/api/instructor/all")
       .then((response) => {
         this.setState({ instructors: response.data });
       })
@@ -23,7 +23,7 @@ export default class ListInstructors extends Component {
 
   componentDidUpdate() {
     axios
-      .get("backendcommando.herokuapp.com/api/instructor/all")
+      .get("https://backendcommando.herokuapp.com/api/instructor/all")
       .then((response) => {
         this.setState({ instructors: response.data });
       })

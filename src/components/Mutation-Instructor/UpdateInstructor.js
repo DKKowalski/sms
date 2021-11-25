@@ -27,7 +27,7 @@ export default class UpdateInstructor extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://backendcommando.herokuapp.com/api/instructor/edit/" +
+        "https://backendcommando.herokuapp.com/api/instructor/edit/" +
           this.props.match.params.id
       )
       .then((response) => {
@@ -90,7 +90,7 @@ export default class UpdateInstructor extends Component {
 
     axios
       .post(
-        "http://backendcommando.herokuapp.com/api/instructor/update/" +
+        "https://backendcommando.herokuapp.com/api/instructor/update/" +
           this.props.match.params.id,
         updateInstructor
       )

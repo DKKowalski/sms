@@ -49,7 +49,7 @@ class instructorLogin extends Component {
       alert("Enter Admin Credentials");
     } else {
       axios
-        .post("http://backendcommando.herokuapp.com/api/instructor/login", new_Instructor)
+        .post("https://backendcommando.herokuapp.com/api/instructor/login", new_Instructor)
         .then((res) => {
           if (res.status === 200) {
             alert("Login Success! Welcome, " + this.state.instructorID);

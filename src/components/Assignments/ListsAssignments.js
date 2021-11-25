@@ -43,7 +43,7 @@ export default class ListsAssignments extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/assignments/all")
+      .get("https://backendcommando.herokuapp.com/api/assignments/all")
       .then((response) => {
         this.setState({ assignments: response.data });
       })
@@ -53,7 +53,7 @@ export default class ListsAssignments extends Component {
   }
   componentDidUpdate() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/assignments/all")
+      .get("https://backendcommando.herokuapp.com/api/assignments/all")
       .then((response) => {
         this.setState({ assignments: response.data });
       })

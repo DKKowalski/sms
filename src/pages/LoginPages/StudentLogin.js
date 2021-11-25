@@ -50,7 +50,7 @@ class StudentLogin extends Component {
       alert("Enter Admin Credentials");
     } else {
       axios
-        .post("http://backendcommando.herokuapp.com/api/instructor/login", new_Student)
+        .post("https://backendcommando.herokuapp.com/api/instructor/login", new_Student)
         .then((res) => {
           if (res.status === 200) {
             alert("Login Success! Welcome, " + this.state.studentID);
