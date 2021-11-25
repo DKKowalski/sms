@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
-
-const Admin = (props) => {
+import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
+const Course = (props) => {
   return (
     <div>
       <Table stripe bordered hover>
@@ -16,29 +17,31 @@ const Admin = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td>{props.admin.adminID}</td>
-            <td>{props.admin.name}</td>
-            <td>{props.admin.email}</td>
-            <td>{props.admin.password}</td>
+            <td> {props.course.courseName} </td>
+            <td> {props.course.description} </td>
+            <td> {props.course.startDate} </td>
+            <td> {props.course.duration} </td>
           </tr>
         </tbody>
+        <Button color="yellow">
+          <Link to={"/addAssignment"}>Add Assignment</Link>
+        </Button>
       </Table>
     </div>
   );
 };
 
-export default class ListAdmins extends Component {
+export default class ListCourses extends Component {
   constructor(props) {
     super(props);
-    this.state = { admins: [] };
+    this.state = { courses: [] };
   }
 
   componentDidMount() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/admin/edit")
+      .get("http://backendcommando.herokuapp.com/api/course/")
       .then((response) => {
-        this.setState({ admins: response.data });
-        console.log(response.data);
+        this.setState({ courses: response.data });
       })
       .catch(function (error) {
         console.log(error);
@@ -47,22 +50,20 @@ export default class ListAdmins extends Component {
 
   componentDidUpdate() {
     axios
-      .get("http://backendcommando.herokuapp.com/api/admin/edit")
+      .get("http://localhost:4000/api/course/")
       .then((response) => {
-        this.setState({ admins: response.data });
-        console.log(response.data);
+        this.setState({ courses: response.data });
       })
       .catch(function (error) {
         console.log(error);
       });
   }
 
-  adminList() {
-    return this.state.admins.map(function (currentAdmin, i) {
-      return <Admin admin={currentAdmin} key={i} />;
+  courseList() {
+    return this.state.courses.map(function (currentCourse, i) {
+      return <Course course={currentCourse} key={i} />;
     });
   }
-
   render() {
     return (
       <div style={{ marginTop: 32 }}>
@@ -71,7 +72,7 @@ export default class ListAdmins extends Component {
         </div>
 
         <Table stripe bordered hover>
-          <tbody> {this.adminList()} </tbody>
+          <tbody> {this.courseList()} </tbody>
         </Table>
       </div>
     );

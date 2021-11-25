@@ -25,7 +25,7 @@ class App extends Component {
           <HeaderTab />
           <div>
             <Switch>
-              <Route path="/home" exact component={Home}></Route>
+              <Route path="/" exact component={Home}></Route>
               <Route path="/about" exact component={AboutUS}></Route>
               <Route path="/faculty"></Route>
               <Route path="/news"></Route>
@@ -40,7 +40,6 @@ class App extends Component {
                 component={InstructorDashboard}
               />
               <Route path="/admin/dashboard" component={AdminDashboard} />
-            
             </Switch>
           </div>
         </div>

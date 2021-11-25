@@ -52,7 +52,7 @@ export default class AddAdmin extends Component {
       password: this.state.password,
     };
 
-    axios.post("http://localhost:4000/api/admin/add", newData).then((res) => {
+    axios.post("http://backendcommando.herokuapp.com/api/admin/add", newData).then((res) => {
       console.log(res.data);
     });
 

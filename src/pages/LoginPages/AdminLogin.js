@@ -52,7 +52,7 @@ class AdminLogin extends Component {
       alert("Enter Admin Credentials");
     } else {
       axios
-        .post("http://localhost:4000/api/admin/login", new_admin)
+        .post("http://backendcommando.herokuapp.com/api/admin/login", new_admin)
         .then((res) => {
           if (res.status === 200) {
             alert("Login Success! Welcome, " + this.state.adminID);

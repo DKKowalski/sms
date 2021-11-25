@@ -45,7 +45,7 @@ class ListStudent extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:4000/api/student/")
+      .get("http://backendcommando.herokuapp.com/api/student/")
       .then((response) => {
         this.setState({ students: response.data });
       })
@@ -55,7 +55,7 @@ class ListStudent extends Component {
   }
   componentDidUpdate() {
     axios
-      .get("http://localhost:4000/api/student/")
+      .get("http://backendcommando.herokuapp.com/api/student/")
       .then((response) => {
         this.setState({ students: response.data });
       })

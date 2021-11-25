@@ -56,7 +56,7 @@ export default class AddStudent extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/api/course/")
+      .get("http://backendcommando.herokuapp.com/api/course/")
       .then((response) => {
         this.setState({ courseList: response.data });
       })

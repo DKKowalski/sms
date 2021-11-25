@@ -10,14 +10,12 @@ import {
   LockOpenRounded,
 } from "@material-ui/icons";
 
-
-
 function HeaderTab() {
   return (
-    <div  className="header">
+    <div className="header">
       <div className="container">
         <div className="left__items">
-          <Link to="/home" className="link">
+          <Link to="/" className="link">
             <School />
             Craddle Creed
           </Link>

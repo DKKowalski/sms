@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ListGroup, Card } from "react-bootstrap";
-
-
+import AddAssignment from "../Assignments/AddAssignment";
+import ListAssignmentsGiven from "../Assignments/ListAssignmentsGiven";
+import EditAssignments from "../Assignments/EditAssignments";
+import ListCourses from "../Courses/ListCourses";
 class InstructorDash extends Component {
   constructor(props) {
     super(props);
@@ -26,27 +28,34 @@ class InstructorDash extends Component {
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/instructor/add_assignment">
                   Add Assignments
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/instructor/view_courses">
                   View Courses
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/instructor/view_assignments">
                   View Assignments
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/instructor/view_students_grade">
                   View Students Grade
                 </Link>
               </ListGroup.Item>
             </ListGroup>
           </Card>
+          <Route
+            path="/instructor/view_assignments"
+            component={ListAssignmentsGiven}
+          />
+          <Route path="/instructor/add_assignment" component={AddAssignment} />
+          <Route path="/assignment/edit/:id" component={EditAssignments} />
+          <Route path="/instructor/view_courses" component={ListCourses} />
         </Router>
       </div>
     );

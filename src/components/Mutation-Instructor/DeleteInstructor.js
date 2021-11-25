@@ -11,7 +11,7 @@ export default class DeleteInstructor extends Component {
   componentDidMount() {
     axios
       .delete(
-        "http://localhost:4000/api/instructor/delete/" +
+        "http://backendcommando.herokuapp.com/api/instructor/delete/" +
           this.props.match.params.id
       )
       .then((response) => {})
@@ -23,7 +23,7 @@ export default class DeleteInstructor extends Component {
   onSubmit(e) {
     e.preventDefault();
     axios.delete(
-      "http://localhost:4000/api/instructor/delete/" +
+      "http://backendcommando.herokuapp.com/api/instructor/delete/" +
         this.props.match.params.id
     );
 
