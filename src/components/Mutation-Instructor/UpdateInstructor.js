@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Input, Button, Dropdown } from "semantic-ui-react";
+import { Form, Input, Button } from "semantic-ui-react";
 import axios from "axios";
 export default class UpdateInstructor extends Component {
   constructor(props) {

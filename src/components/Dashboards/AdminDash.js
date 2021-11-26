@@ -5,6 +5,7 @@ import { SettingsSharp } from "@material-ui/icons";
 import Students from "../Mutation-Student/Student";
 import Instructor from "../Mutation-Instructor/Instructor";
 import Admin from "../Mutation-Admin/Admin";
+import Course from "../Courses/Course";
 
 class AdminDash extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class AdminDash extends Component {
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link className="link" to="">
+                <Link className="link" to="/admin/dashboard/course_mgt">
                   Course Management
                 </Link>
               </ListGroup.Item>
@@ -59,6 +60,7 @@ class AdminDash extends Component {
             component={Instructor}
           />
           <Route path="/admin/dashboard/admin_mgt" component={Admin} />
+          <Route path="/admin/dashboard/course_mgt" component={Course} />
         </Router>
       </div>
     );

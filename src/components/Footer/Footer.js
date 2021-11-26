@@ -11,21 +11,23 @@ import crest from "../../assets/cradleCreed.svg";
 function footer() {
   return (
     <div className="wrapper">
-      <div className="textArea">
-        <div style={{ display: "flex"}}>
+      <div className="textArea" style={{ display: "flex" }}>
+        <div style={{ marginRight: 20 }}>
           <img
             src={crest}
             alt="crest"
             style={{
-              width: 100,
-              height: 100,
+              width: 200,
+              height: 200,
             }}
           />
         </div>
-        <h1>Craddle Creed School</h1>
-        <p> Faith, Character and Intergrity</p>
-        <p>P.O.Box</p>
-        <p>Oyarifa, Accra</p>
+        <div className="text">
+          <h1>Craddle Creed School</h1>
+          <p> Faith, Character and Intergrity</p>
+          <p>P.O.BOX KW 72</p>
+          <p>KWABENYA-ACCRA</p>
+        </div>
       </div>
 
       <div className="socialMedia">
@@ -34,7 +36,7 @@ function footer() {
         <Instagram style={{ color: "white", fontWeight: "Bold" }} />
       </div>
       <div className="copyRight">
-        <CopyrightRounded />
+        <CopyrightRounded style={{ color: "white" }} />
         <p>2021 craddle creed school</p>
       </div>
     </div>

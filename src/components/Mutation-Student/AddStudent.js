@@ -133,7 +133,7 @@ export default class AddStudent extends Component {
     };
 
     axios
-      .post("https://localhost:4000/api/student/add", newUser)
+      .post("https://backendcommando.herokuapp.com/api/student/add", newUser)
       .then(
         (res) => console.log(res.data),
         alert("You are successfully registered")

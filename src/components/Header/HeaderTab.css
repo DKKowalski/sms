@@ -4,15 +4,7 @@
   border-bottom: 2px solid #524e50;
 }
 
-.middle__items {
-  display: flex;
-  flex-grow: 3;
-  justify-content: space-evenly;
-}
 
-.left__items {
-  flex-grow: 1;
-}
 
 .header {
   background-color: #eee4f0;

@@ -1,22 +1,25 @@
-import React from "react";
-import AwesomeSlider from "react-awesome-slider";
-import AwesomeSliderStyles from "react-awesome-slider/src/styles";
+import React, { useState } from "react";
+import { Carousel } from "react-bootstrap";
 
 function Slider({ img1, img2, img3 }) {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
   return (
     <div>
-      <AwesomeSlider
-        style={{
-          height: 650,
-          maxWidth: 1850,
-          margin: "auto",
-          marginBottom: 64,
-        }}
-      >
-        <div data-src={img1} />
-        <div data-src={img2} />
-        <div data-src={img3} />
-      </AwesomeSlider>
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel.Item>
+          <img className="d-block w-100" src={img1} alt="First slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={img2} alt="Second slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={img3} alt="Third slide" />
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 }

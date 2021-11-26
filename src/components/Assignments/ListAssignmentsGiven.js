@@ -69,7 +69,7 @@ export default class ListAssignmentsGiven extends Component {
         {" "}
         <div style={{ marginTop: 32 }}>
           <div className="headtext">
-            <h1 style={{ color: "black" }}> Admins </h1>
+            <h1 style={{ color: "black" }}> Assignments </h1>
           </div>
 
           <Table stripe bordered hover>

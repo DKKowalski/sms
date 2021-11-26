@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
+import axios from "axios";
+import { Table } from "react-bootstrap";
 const Course = (props) => {
   return (
     <div>
@@ -10,28 +10,38 @@ const Course = (props) => {
         <thead>
           <tr>
             <th>NAME</th>
-            <th>ID NUMBER</th>
-            <th>EMAIL</th>
-            <th>Password</th>
+            <th>DESCRIPTION</th>
+            <th>INSTRUCTOR</th>
+            <th>INSTRUCTOR EMAIL</th>
+            <th>DURATION</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td> {props.course.courseName} </td>
             <td> {props.course.description} </td>
+            <td> {props.course.instructorName} </td>
+            <td> {props.course.instructorEmail} </td>
             <td> {props.course.startDate} </td>
             <td> {props.course.duration} </td>
+
+            <td>
+              <Button color="yellow">
+                <Link to={"/update/" + props.course._id}>Edit</Link>
+              </Button>
+              <Button color="orange">
+                <Link to={"/delete/" + props.course._id}>Delete</Link>
+              </Button>
+            </td>
           </tr>
         </tbody>
-        <Button color="yellow">
-          <Link to={"/addAssignment"}>Add Assignment</Link>
-        </Button>
       </Table>
     </div>
   );
 };
 
-export default class ListCourses extends Component {
+export default class ManageCourse extends Component {
   constructor(props) {
     super(props);
     this.state = { courses: [] };
@@ -68,7 +78,7 @@ export default class ListCourses extends Component {
     return (
       <div style={{ marginTop: 32 }}>
         <div className="headtext">
-          <h1 style={{ color: "black" }}> Courses </h1>
+          <h1 style={{ color: "black" }}> Manage Courses </h1>
         </div>
 
         <Table stripe bordered hover>

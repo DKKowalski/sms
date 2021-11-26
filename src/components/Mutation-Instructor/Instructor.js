@@ -12,7 +12,7 @@ export default class Instructor extends Component {
       <Router>
         <div className="">
           <Card style={{ marginTop: 50, width: "18rem" }}>
-            <Card.Header>Student Management</Card.Header>
+            <Card.Header>Instructor/Staff Management</Card.Header>
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <Link
